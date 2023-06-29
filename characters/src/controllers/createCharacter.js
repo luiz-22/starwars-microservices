@@ -1,4 +1,7 @@
+const Characters = require('../data');
+const { response } = require('../utils');
+
 module.exports = async (req, res) => {
-    throw Error("Hubo un error")
-    res.status(200).send("creando personaje");
+    const newCharacter = await Characters.create();
+    response(res, 201, "Personaje creado.");
 };
