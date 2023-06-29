@@ -8,4 +8,8 @@ server.use(express.json());
 
 server.use(require('./routes'));
 
+server.use("*", (req, res) => {
+    res.status(400).send("Not Found");
+})
+
 module.exports = server;

@@ -1,6 +1,7 @@
-const Characters = require('../data');
+const Planets = require('../data');
 const { response } = require('../utils');
 
-module.exports = (req, res) => {
-    res.status(200).send("creando planeta");
+module.exports = async (req, res) => {
+    const newPlanet = await Planets.create();
+    response(res, 201, "Planeta creado.");
 };
