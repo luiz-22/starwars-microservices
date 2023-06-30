@@ -8,7 +8,7 @@ app.use(morgan("dev"));
 
 // Quiero que me redirija esta petición al puerto 8001 de la computadora characters
 app.use("/characters", createProxyMiddleware({
-    target: "http://localhost:8001",
+    target: "http://characters:8001",
     changeOrigin: true,
     pathRewrite: {
       "^/characters": ""
@@ -16,7 +16,7 @@ app.use("/characters", createProxyMiddleware({
 }));
 
 app.use("/films", createProxyMiddleware({
-    target: "http://localhost:8002",
+    target: "http://films:8002",
     changeOrigin: true,
     pathRewrite: {
       "^/films": ""
@@ -24,7 +24,7 @@ app.use("/films", createProxyMiddleware({
 }));
 
 app.use("/planets", createProxyMiddleware({
-    target: "http://localhost:8003",
+    target: "http://planets:8003",
     changeOrigin: true,
     pathRewrite: {
       "^/planets": ""
